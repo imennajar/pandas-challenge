@@ -1,139 +1,23 @@
 # pandas-challenge
 
-# How to use Pandas  to read information from a CSV file, manipulate it, and return DataFrames: :cd:
+# How to use Pandas to read information from a CSV file, manipulate it, and return DataFrames for better analysis: :cd:
 
-In this project we will analyse a city future school budgets and priorities. That is why we will start by analyzing the district-wide standardized test results, then we will aggregate the data to showcase obvious trends in school performance with the access to a various information on the school
+In this project we will analyze a city's future school budgets and priorities. Thus we will start by analyzing the district-wide standardized test results, and then we will aggregate the data to showcase obvious trends in school performance using available information on the school.
 
 # What we will learn from this project:
 
-    - How to create dataframes from an existent dataset
-    - How to perform the necessary calculations and creat a high-level snapshot of the key metrics
-    - how to filter, merge, sort, group and bin to enable more vigorous dataset customization
-    - How to analyse the output Data to make the right decision
+    - How to create dataframes from an existing dataset or from other dataframes
+    
+    - How to perform the necessary calculations and create a high-level snapshot of the key metrics
+    
+    - How to filter, merge, sort, group and bin to enable more vigorous dataset customization
+    
+    - How to analyze the output Data to make the right decisions
     
 # Instructions:
-
-#  Program:
-
-### Tools: 
-- Pandas which is a Python library for data manipulations and analysis
-- Jupyter Notebook wich is a web-based interactive computing pltaform allows user to compile all aspects of a data project
-   
-
-### Analysis: budget_data.txt
-![screenshot for resources](/budget_data.txt.png)
-
-### Python script: main.py
-```
-#loop in the file
-    for row in csvreader:
-       
-        # net total amount
-        net_amount = net_amount + float(row[1])
-        
-        #assign the value of each profit/losses and its date respectively to the lists a and c
-        a.append(float(row[1]))  
-        c.append(row[0])
+ 1. District Summary: Performing the necessary calculations and creating a high-level snapshot of the district's key metrics:
     
-    #assign the changes of each profit/losses and their dates respectively in list b and d
-    for j in range (len(a)-1):
-        
-        x=((a[j+1]-a[j]))
-        y=c[j+1]
-        b.append((x))
-        d.append(y)
-        
-    #calculate the average of the changes
-    avg= sum(b)/len(b)
-
-    max=max(b)
-    min=min(b)
-    pmax=b.index(max)
-    pmin=b.index(min)
-```
-
-## PyBank:
-
-### Resources: budget_data.csv
-![screenshot for resources](/election_data.png)
-
-### Analysis: budget_data.txt
-![screenshot for resources](/election_data.txt.png)
-
-### Python script: main.py
-```
-#loop in the file
-    for row in csvreader:
-        
-        #assign the value of names to the list a 
-        a.append(row[2])  
-    #sort the list a 
-    a.sort()
-    
-    #fill the list b with condidate names without redundancy
-    b.append(a[0])
-    
-    for i in range (len(a)-1):
-        
-        if a[i]!=a[i+1]:
-            b.append(a[i+1])
-            
-    #count the number of votes for each candidate and save it in the list c        
-    for i in range (len(b)):   
-        l=0
-        for j in range (len(a)): 
-           if a[j]==b[i]:
-               l=l+1
-        c.append(l)
-    
-    #print the name of each candidate with the percentage of their votes and the total of their votes 
-    for i in range (len(c)):
-        print(b[i],':', round(c[i]/len(a)*100,3),'% (',c[i],')','\n')
-    
-    x=max(c)
-    p=c.index(x)
-```   
-# Tip:🪄
-  
-Python offers huge libraries with multiple predefined functions and methods to facilitate programming. Here are some examples:
-- len: Returns the length of a list
-- sum: Returns the total of all elements in a list instead of a whole loop
-- min and max: Return the minimum and the maximum values in a list
-- index: Returns the value of an index in a list
-
---> Code to look for the maximum and its index in a list with loops:😒
-```
-    max=0
-    pmax=0
-    #look for the max in a list
-    for j in range (len(b)):
-        if b[j]> max:
-            max=b[j]
-            pmax=j  
-   
-    #look for the index of the max in a list
-    h = 0
-    stop= False
-    while(stop==False) or (h>=len(b)):
-        if h == pmax: 
-            stop=True
-        else: h=h+1
-```
- --> Code to look for the maximum and its index in a list with the function max and the method index: 😊
- ```
-     max=max(b)
-     pmax=b.index(max)
- ```
-- Sort(): Forget about sorting algorithms and how complicated they are! one simple call and your list is sorted! 😍
-
-
-
-
-This analysis is for a city's school district to help the responsibles to make strategic decisions regarding future school budgets and priorities. That is why we will start by analyzing the district-wide standardized test results, then we will aggregate the data to showcase obvious trends in school performance With the access to a various information on the school
-
-   1. District Summary: Performing the necessary calculations and creating a high-level snapshot of the district's key metrics:
-    
-        - Total number of unique schools
+        - Total number of schools
 
         - Total students
 
@@ -143,9 +27,9 @@ This analysis is for a city's school district to help the responsibles to make s
 
         - Passing rates (Math, Reading and both)
 
-     All these information will be used for a later deeper analysis   
-
-   2. School Summary: Performing the necessary calculations and summarizing key metrics about each school:
+     All this information will be used for a subsequent deeper analysis
+    
+3. School Summary: Performing the necessary calculations and summarizing key metrics about each school:
         
         - Total student count per school
 
@@ -155,59 +39,72 @@ This analysis is for a city's school district to help the responsibles to make s
 
         - Passing rates (Math, Reading and both)
 
-        - Associate all this information with the name and the type of each school    
-        
-   3. Sorting the information to organize and analyse Data in more efficient and meaningful way:
+        - Associate all this information with the name and the type of each school
+   
+5. Sorting the information to organize and analyze data in a more efficient and meaningful way:
 
-       - Sort the schools by the purcentage of Overall Passing to analyse the Highest-Performing Schools and the Lowest-Performing Schools 
+       - Sort the schools by the percentage of Overall Passing to analyze the Highest-Performing Schools and the Lowest-Performing Schools 
 
-   4. Placing values into groups to enable more vigorous dataset customization:
+6. Placing values into groups to enable more vigorous dataset customization:
 
         - Scores by Grade: for students of each grade level (9th, 10th, 11th, 12th) at each school
+   
         - Scores by School Spending: average spending ranges (per student)
+   
         - Scores by School Size:  school performance based on school size (small, medium, or large)
+   
         - Scores by School Type: school performance based on the type of the school
+            
+8. Analyzing and make conclusions for batter decisions
 
-## Conclusions:
+#  Program:
 
-   ### District VS Charter
-  
+### Tools: 
+
+- Pandas, which is a Python library for data manipulation and analysis
    
-   - District schools are large schools without exception,they contien more than 2000 students.
+- Jupyter Notebook, a web-based interactive computing pltaform, allows the user to compile all aspects of a data project.
 
-   - Charter schools (except Wilson High School) are small and medium schools, contien  between less than 1000 and 2000 students.
+### Python script using Pandas:
+#### Example with grouping by a criteria
+```
+#Calculate the total student count per school
+per_school_counts =pd.DataFrame({'Total Students':school_data_complete.groupby(['school_name'])['Student ID'].count()})
+per_school_counts
+#### Example with filtring:
+```
+# Calculate the number of students per school with reading scores of 70 or higher
+students_passing_reading = school_data_complete[(school_data_complete["reading_score"] >= 70)]
+school_students_passing_reading =pd.DataFrame ({'reading scores of 70 or higher':students_passing_reading.groupby('school_name')['reading_score'].size()})        school_students_passing_reading
+```
+#### Example with Sorting:
+ ```
+# Sort the schools by `% Overall Passing` in ascending order and display the top 5 rows.
+bottom_schools = per_school_summary.sort_values('% Overall Passing',ascending=True)
+top_schools["Total students"] = top_schools["Total Students"].map("${:,.0f}".format)
+bottom_schools.head(5) 
+```
+#### Example with benning:
+```
+# Establish the bins 
+spending_bins = [0, 585, 630, 645, 680]
+la = ["<$585", "$585-630", "$630-645", "$645-680"]
 
-   - District schools get higher budget
+# Create a copy of the school summary  
+school_spending_df = per_school_summary.copy()
 
-   - Charter schools get lower budget
+# Categorize spending based on the bins
+school_spending_df['Per Student Budget']=school_budget_capita['per school capita']
+school_spending_df["Spending Ranges (Per Student)"] = pd.cut(school_spending_df['Per Student Budget'],
+                                                     spending_bins, labels=la,include_lowest = True)
+school_spending_df
+```
+# Tip:🪄
 
---> The ratio Per Student Budget is not proportional
+Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier
+Here example of code to export dataframes to excel sheets
 
-   - The purcentage of Overall passing for charter schools is obviously higher than district schools
-    <img src='graph1.png' style ='width:500px;height:500px'/>
-    
-   - The five first highest performing schools are charter schools
-    
-   - The five last bottom performing schools are district schools
-    
-<img src='graph1.png' style ='width:500px;height:500px'/>
-   
-    
-    
-#### Conclusions: The responsibles get involved more on less profitable schools
-
-
-
-### Math VS Reading
-
-   - The avarege per school Reading is higher than the avarege per school Math
-    
-   - The number of students per school with reading scores more than 70 is heigher than the number of students per school with Math scores more than 70 is heigher
-    
-   - The average of Reading Scores by Grade is much better than the average of Math Scores by Grades (for almost all grades)
-    
-   - The spending Reading scores is higher than spending Math Scores and consequently spending passing Reading is higher than spending passing Math
-    
-#### Conclusions: The responsibles get involved more on Reading than Math which negatively impacts on improving Math 
-
-## Remediaiton:
+```
+with pd.ExcelWriter('panda.xlsx')as writer:
+    type_summary.to_excel(writer,sheet_name='Sheet_1')
+```
