@@ -71,37 +71,46 @@ In this project we will analyze a city's future school budgets and priorities. T
 #Calculate the total student count per school
 per_school_counts =pd.DataFrame({'Total Students':school_data_complete.groupby(['school_name'])['Student ID'].count()})
 per_school_counts
+```
+![groupby](/groupby.png)
+
 #### Example with filtring:
 ```
-# Calculate the number of students per school with reading scores of 70 or higher
+#Calculate the number of students per school with reading scores of 70 or higher
 students_passing_reading = school_data_complete[(school_data_complete["reading_score"] >= 70)]
 school_students_passing_reading =pd.DataFrame ({'reading scores of 70 or higher':students_passing_reading.groupby('school_name')['reading_score'].size()})        school_students_passing_reading
 ```
+![filtring](/filter.png)
+
 #### Example with Sorting:
  ```
-# Sort the schools by `% Overall Passing` in ascending order and display the top 5 rows.
+#Sort the schools by `% Overall Passing` in ascending order and display the top 5 rows.
 bottom_schools = per_school_summary.sort_values('% Overall Passing',ascending=True)
 top_schools["Total students"] = top_schools["Total Students"].map("${:,.0f}".format)
 bottom_schools.head(5) 
 ```
+![sorting](/sort.png)
+
 #### Example with benning:
 ```
-# Establish the bins 
+#Establish the bins 
 spending_bins = [0, 585, 630, 645, 680]
 la = ["<$585", "$585-630", "$630-645", "$645-680"]
 
-# Create a copy of the school summary  
+#Create a copy of the school summary  
 school_spending_df = per_school_summary.copy()
 
-# Categorize spending based on the bins
+#Categorize spending based on the bins
 school_spending_df['Per Student Budget']=school_budget_capita['per school capita']
 school_spending_df["Spending Ranges (Per Student)"] = pd.cut(school_spending_df['Per Student Budget'],
                                                      spending_bins, labels=la,include_lowest = True)
 school_spending_df
 ```
+![binning](/bin.png)
+
 # Tip:🪄
 
-Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier
+Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier. 
 Here example of code to export dataframes to excel sheets
 
 ```
