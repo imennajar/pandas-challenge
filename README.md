@@ -110,8 +110,8 @@ school_spending_df
 
 # Tip:🪄
 
-Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier. 
-Here example of code to export dataframes to excel sheets
+Take advantage of the first module, export dataframes to Excel and insert charts to make the analyzis easier. 
+The following is an example of a code to export a dataframe to an Excel spreadsheet:
 
 ```
 with pd.ExcelWriter('panda.xlsx')as writer:
