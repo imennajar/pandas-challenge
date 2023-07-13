@@ -110,7 +110,7 @@ school_spending_df
 
 # Tip:🪄
 
-Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier
+Take advantage of the perivious seen module, export utile dataframes to excel sheets and insert charts to make the analysis easier. 
 Here example of code to export dataframes to excel sheets
 
 ```
