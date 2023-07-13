@@ -110,7 +110,7 @@ school_spending_df
 
 # Tip:🪄
 
-Take advantage of the first module, export dataframes to Excel and insert charts to make the analyzis easier. 
+Take advantage of the first module, export dataframes to Excel and insert charts or filters to make the analyzis easier. 
 The following is an example of a code to export a dataframe to an Excel spreadsheet:
 
 ```
