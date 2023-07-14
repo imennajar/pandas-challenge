@@ -117,4 +117,4 @@ The following is an example of a code to export a dataframe to an Excel spreadsh
 with pd.ExcelWriter('panda.xlsx')as writer:
     type_summary.to_excel(writer,sheet_name='Sheet_1')
 ```
-<img src='graph1.png' style ='width:500px;height:500px'/>       ![chart2](/graph2.png)       ![image](https://github.com/imennajar/pandas-challenge/assets/134962003/e2abe1a9-6223-42b5-87ab-8db40d750149)
+<img src='graph1.png' style ='width:500px;height:500px'/>      <img src='graph2.png' style ='width:500px;height:500px'/>       ![image](https://github.com/imennajar/pandas-challenge/assets/134962003/e2abe1a9-6223-42b5-87ab-8db40d750149)
